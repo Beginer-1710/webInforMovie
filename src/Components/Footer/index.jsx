@@ -44,7 +44,7 @@ function Footer(props) {
                         About us
                     </span>
                     <span>
-                        Pravacy policy
+                        Privacy policy
                     </span>
                 </div>
             </div>
