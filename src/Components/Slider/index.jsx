@@ -30,7 +30,7 @@ function Slider(props) {
     },[])
     const currentUrl = useNavigate();
     const handleClickWatch = (id) => {
-        currentUrl(`/detail/${id}`)
+        currentUrl(`/webInforMovie/detail/${id}`)
     }
     return (
         <div className='Container-slider'>

@@ -11,16 +11,19 @@ import MovieGenre from './Pages/MovieGenre';
 import Detail from './Pages/Detail';
 import { useState } from 'react';
 import Follows from './Pages/Follows';
+import NoPage from './Components/NoPage';
 function App() {
   const [loading,setLoading] = useState(true);
   return (
     <>
       <Header />
         <Routes>
-          <Route path='/' element={<Home />}/>
-          <Route path='/genres/:idGenre' element={<MovieGenre />} />
-          <Route path='/detail/:idMovie' element={<Detail />} />
-          <Route path='/follow' element={<Follows />} />
+          <Route path='/webInforMovie' element={<Home />}/>
+          <Route path='/webInforMovie/genres/:idGenre' element={<MovieGenre />} />
+          <Route path='/webInforMovie/detail/:idMovie' element={<Detail />} />
+          <Route path='/webInforMovie/follow' element={<Follows />} />
+
+          <Route element={<NoPage />} />
         </Routes>
       <Footer />
     </>

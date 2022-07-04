@@ -86,10 +86,10 @@ function Header(props) {
     
     const urlCurrent = useNavigate();
     const handleClickGoHome = () => {
-        urlCurrent("/")
+        urlCurrent("/webInforMovie")
     }
     const handleClickGoFollow = () => {
-        urlCurrent("/follow")
+        urlCurrent("/webInforMovie/follow")
         handleClickShowSmallMenuRespon()
     }
 

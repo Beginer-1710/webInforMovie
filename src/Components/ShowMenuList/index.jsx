@@ -10,7 +10,7 @@ function ShowMenuList(props) {
     const {listItem, numberShow , onCloseMenu} = props;
     const currentParam = useNavigate();
     const handleClickLink = (item) => {
-        currentParam(`/genres/${item.name}_${item.id}`)
+        currentParam(`/webInforMovie/genres/${item.name}_${item.id}`)
         onCloseMenu()
     }
 

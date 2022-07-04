@@ -16,7 +16,7 @@ function ItemMovie(props) {
     const imgUrl = imgItem ? `https://image.tmdb.org/t/p/original/${imgItem}` : "https://ss-images.saostar.vn/wwebp700/2018/12/20/4290585/glass-poster.jpg"
     const currentUrl = useNavigate();
     const handleClickItem = () => {
-        currentUrl(`/detail/${idMovie}`)
+        currentUrl(`/webInforMovie/detail/${idMovie}`)
     }
 
     const dispatch = useDispatch();

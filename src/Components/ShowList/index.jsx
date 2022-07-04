@@ -46,7 +46,7 @@ function ShowList(props) {
 
     const urlCurrent = useNavigate();
     const hanleClickViewMore = () => {
-        urlCurrent(`/genres/${nameList}_${listId}`)
+        urlCurrent(`/webInforMovie/genres/${nameList}_${listId}`)
     }
     
     return (
