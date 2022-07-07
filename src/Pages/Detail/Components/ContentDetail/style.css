@@ -116,7 +116,7 @@
 }
 
 
-.contentDetail-container .text-animation2{
+.contentDetail-container .textCustom{
     position: relative;
     border-radius: 20px;
     overflow: hidden;
@@ -125,13 +125,13 @@
     width: auto;
 }
 
-.contentDetail-container .text-animation2 span{
+.contentDetail-container .textCustom span{
     position: relative;
     z-index: 2;
     display: inline-block;
 }
 
-.contentDetail-container .text-animation2::before{
+.contentDetail-container .textCustom::before{
     content: "";
     position: absolute;
     left: 0;
@@ -142,7 +142,7 @@
     animation: animate 4s linear infinite;
 }
 
-.contentDetail-container .text-animation2::after{
+.contentDetail-container .textCustom::after{
     content: "";
     position: absolute;
     top : 4px;

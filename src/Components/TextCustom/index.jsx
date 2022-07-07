@@ -10,7 +10,7 @@ function TextCustom(props) {
     const numberColor = (color % 9)+1;
     return (
         <h3 className={`textCustom color${numberColor}`}>
-            {content}
+            <span>{content}</span>
         </ h3>
     );
 }

@@ -6,7 +6,7 @@ import VideoRender from '../VideoRender';
 import ShowList from '../../../../Components/ShowList';
 import { Swiper, SwiperSlide } from 'swiper/react';
 import SwiperCore, { Autoplay } from 'swiper';
-import TextAnimation2 from '../../../../Components/TextAnimation2';
+import TextCustom from '../../../../Components/TextCustom';
 import Slider from "react-slick";
 ContentDetail.propTypes = {
     
@@ -37,7 +37,7 @@ function ContentDetail(props) {
     return (
         <div className='contentDetail'>
             <div className='contentDetail-container'>
-                <TextAnimation2 content="Trailer" color={randomNum}/>
+                <TextCustom content="Trailer" color={randomNum}/>
                 <div className='video-container'>
                     {
                         videos.map((item) => (
@@ -47,7 +47,7 @@ function ContentDetail(props) {
                 </div>
 
 
-                <TextAnimation2 content="Reviews" color={randomNum}/>
+                <TextCustom content="Reviews" color={randomNum}/>
                 <div className='review-container'>
 
                     {
