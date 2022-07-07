@@ -6,7 +6,8 @@ import HeaderGenre from '../MovieGenre/Components/HeaderGenre';
 import ShowListMovieGenre from '../MovieGenre/Components/ShowListMovieGenre';
 import Loading from '../../Components/Loading'
 import Button2 from '../../Components/Button2';
-import TextAnimation from '../../Components/TextAnimation';
+import TextAnimation2 from '../../Components/TextAnimation2';
+
 Follows.propTypes = {
     
 };
@@ -25,7 +26,6 @@ function Follows(props) {
             <div className='Follow'>
                 <HeaderGenre nameGenre="FOLLOWING"/>
                 <ShowListMovieGenre data={listFollow} haveDelete={true}/>
-                
             </div>
         ) :
         <Loading />

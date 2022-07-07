@@ -6,7 +6,8 @@ import VideoRender from '../VideoRender';
 import ShowList from '../../../../Components/ShowList';
 import { Swiper, SwiperSlide } from 'swiper/react';
 import SwiperCore, { Autoplay } from 'swiper';
-import TextAnimation from '../../../../Components/TextAnimation';
+import TextAnimation2 from '../../../../Components/TextAnimation2';
+import Slider from "react-slick";
 ContentDetail.propTypes = {
     
 };
@@ -22,10 +23,21 @@ function ContentDetail(props) {
             tempArrayReview = reviews?.slice(0,reviews.length)
         }
     },[idMovie])
+
+    const settings = {
+        infinite: true,
+        slidesToShow: 1,
+        slidesToScroll: 1,
+        autoplay: true,
+        autoplaySpeed: 3000,
+        arrows : false
+      };
+
+    const randomNum = Math.floor(Math.random()*9) 
     return (
         <div className='contentDetail'>
             <div className='contentDetail-container'>
-                <TextAnimation content="Trailer"/>
+                <TextAnimation2 content="Trailer" color={randomNum}/>
                 <div className='video-container'>
                     {
                         videos.map((item) => (
@@ -35,7 +47,7 @@ function ContentDetail(props) {
                 </div>
 
 
-                <TextAnimation content="Reviews"/>
+                <TextAnimation2 content="Reviews" color={randomNum}/>
                 <div className='review-container'>
 
                     {
@@ -44,19 +56,11 @@ function ContentDetail(props) {
                             <h1>This movie has no reviews yet!</h1>
                         </div>
                         :(
-                            <Swiper
-                        modules={[Autoplay]}
-                        grabCursor={true}
-                        spaceBetween={0}
-                        slidesPerView={1}
-                        speed={700}
-                        autoplay={{delay: 3000}}
-                    >
-                    
-                    {
-                        tempArrayReview.map((item, index) => (
-                            <SwiperSlide key={index}> 
-                                <div className='review-item'>
+                   
+                        <Slider {...settings}>
+                            {
+                                tempArrayReview.map((item, index) => (
+                                <div className='review-item' key={index}>
                                     <div className='review-pic'>
                                         <img src={
                                             item.author_details.avatar_path ? 
@@ -69,10 +73,9 @@ function ContentDetail(props) {
                                         <p className='name-author'>{item.author}</p>
                                     </div>
                                 </div>
-                            </SwiperSlide>
                         ))
                     }
-                    </Swiper>
+                        </Slider>
                         )
                     }
 

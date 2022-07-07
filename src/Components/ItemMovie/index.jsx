@@ -29,12 +29,12 @@ function ItemMovie(props) {
         <div className='item' onClick={handleClickItem}>
             <div className='item-container'>
                 <div className='Item-img_container'>
-                    <img src={imgUrl} alt="Item-img" />
-                    <div className='Item-img_hover'>
-                        <div className='icon-container'>
-                            <PlayArrowIcon className='youtube_icon'/>
+                        <img src={imgUrl} alt="Item-img" />
+                        <div className='Item-img_hover'>
+                            <div className='icon-container'>
+                                <PlayArrowIcon className='youtube_icon'/>
+                            </div>
                         </div>
-                    </div>
                 </div>
                 <span className='iten-name'>{nameItem}</span>
             </div>

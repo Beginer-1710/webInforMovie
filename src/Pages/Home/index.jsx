@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import PropTypes from 'prop-types';
-import Slider from '../../Components/Slider';
+import SliderHome from '../../Components/Slider';
 import ShowList from '../../Components/ShowList';
 import movieApi from '../../api/movieApi';
 import Loading from '../../Components/Loading'
@@ -31,7 +31,7 @@ function Home(props) {
         
             isReady ? (
                 <>
-                    <Slider />
+                    <SliderHome />
                     {
                         listGenres.map((item, index) => (
                             <ShowList key={index} listId={item.id} nameList={item.name} index={index}/>
@@ -41,7 +41,7 @@ function Home(props) {
             )
             :
             <Loading />
-        
+            
     );
 }
 

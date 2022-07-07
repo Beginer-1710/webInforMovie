@@ -22,7 +22,7 @@ function Login(props) {
             onCloseMenuLogin();
         } catch (error) {
             console.log("false to login");
-            enqueueSnackbar("Đăng ký thất bại!!!",{variant:"error"})
+            enqueueSnackbar("Đăng nhập thất bại!!!",{variant:"error"})
         }
     }
     return (

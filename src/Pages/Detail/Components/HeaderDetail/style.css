@@ -4,6 +4,13 @@
     justify-content: center;
 }
 
+.headerDetail-info_creditsItem{
+    display: flex !important;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
 .img-bebind{
     position: absolute;
     top: 0;
@@ -148,5 +155,8 @@
     }
     .headerDetail-info h1{
         font-size: 30px;
+    }
+    .creditsItem_nameActor{
+        font-size: 12px;
     }
 }

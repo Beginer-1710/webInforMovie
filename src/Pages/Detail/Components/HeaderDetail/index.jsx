@@ -6,6 +6,8 @@ import Button from '../../../../Components/Button';
 import { useDispatch, useSelector } from 'react-redux';
 import { AddItem } from '../../FollowSlice';
 import { useSnackbar } from 'notistack';
+
+import Slider from "react-slick";
 HeaderDetail.propTypes = {
     
 };
@@ -32,6 +34,57 @@ function HeaderDetail(props) {
         else
         enqueueSnackbar("Bạn cần đăng nhập để theo dõi phim!!!",{variant:"info"})
     }
+
+    const settings = {
+        infinite: true,
+        slidesToShow: 5,
+        slidesToScroll: 3,
+        arrows : false,
+        responsive: [
+            {
+              breakpoint: 1200,
+              settings: {
+                slidesToShow: 3,
+                slidesToScroll: 1,
+              }
+            },
+            {
+                breakpoint: 860,
+                settings: {
+                  slidesToShow: 6,
+                  slidesToScroll: 1,
+                }
+            },
+            {
+                breakpoint: 630,
+                settings: {
+                  slidesToShow: 5,
+                  slidesToScroll: 1,
+                }
+            },
+            {
+                breakpoint: 530,
+                settings: {
+                  slidesToShow: 4,
+                  slidesToScroll: 1,
+                }
+            },
+            {
+                breakpoint: 430,
+                settings: {
+                  slidesToShow: 3,
+                  slidesToScroll: 1,
+                }
+            },
+            {
+                breakpoint: 320,
+                settings: {
+                  slidesToShow: 2,
+                  slidesToScroll: 1,
+                }
+            },
+          ]
+      };
     return (
         <div className='headerDetail'>
             <div className='img-bebind' style={{backgroundImage : `url(https://image.tmdb.org/t/p/original/${data?.backdrop_path})`}}>
@@ -54,26 +107,19 @@ function HeaderDetail(props) {
                         {data?.overview}
                     </p>
                     <div className='headerDetail-info_credits'>
-                        <Swiper
-                            grabCursor={true}
-                            spaceBetween={10}
-                            slidesPerView={"auto"}
-                        >
-                            {
+                        <Slider {...settings}>
+                        {
                                 credits.map((item, index) => (
-                                    <SwiperSlide key={index}>
-                                        {/* <div className='headerDetail-info_creditsItem'> */}
+                                        <div className='headerDetail-info_creditsItem'> 
                                             <div className='creditsItem_img' style={{backgroundImage : `url(https://image.tmdb.org/t/p/w500/${item.profile_path})`}}>
-
                                             </div>
                                             <div className='creditsItem_nameActor'>
                                                 {item.name}
                                             </div>
-                                        {/* </div> */}
-                                    </SwiperSlide>
+                                        </div>
                                 ))
                             }
-                        </Swiper>
+                        </Slider>
                     </div>
 
                     <div className='follow-button' onClick={handleClickFollow}>
