@@ -13,6 +13,7 @@ import { useState } from 'react';
 import Follows from './Pages/Follows';
 import NoPage from './Components/NoPage';
 
+
 function App() {
   const [loading,setLoading] = useState(true);
   return (
@@ -28,7 +29,6 @@ function App() {
         </Routes>
       <Footer />
     </>
-
   );
 }
 

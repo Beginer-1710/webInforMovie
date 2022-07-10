@@ -1,4 +1,4 @@
-import React, { useMemo } from 'react';
+import React, { useEffect, useMemo, useState } from 'react';
 import PropTypes from 'prop-types';
 import './style.css'
 
@@ -8,12 +8,14 @@ import { Swiper, SwiperSlide } from 'swiper/react';
 import SwiperCore, { Autoplay } from 'swiper';
 import TextCustom from '../../../../Components/TextCustom';
 import Slider from "react-slick";
+import MovieFilm from '../MovieFilm';
+import Loading from '../../../../Components/Loading';
 ContentDetail.propTypes = {
     
 };
 
 function ContentDetail(props) {
-    const {videos, idMovie , reviews} = props;
+    const {videos, idMovie , reviews , isChange} = props;
     let tempArrayReview = {};
     useMemo(() => {
         if(reviews.length > 10){
@@ -22,7 +24,7 @@ function ContentDetail(props) {
         else{
             tempArrayReview = reviews?.slice(0,reviews.length)
         }
-    },[idMovie])
+    })
 
     const settings = {
         infinite: true,
@@ -34,17 +36,40 @@ function ContentDetail(props) {
       };
 
     const randomNum = Math.floor(Math.random()*9) 
+
+    const [isLoading , setIsLoading] = useState(true);
+
+    useMemo(() => {
+        setIsLoading(true)
+    },[isChange])
+
+    useEffect(() =>{
+      setTimeout(() =>{
+          setIsLoading(false);
+      },1000)
+  },[isChange])
+
+  console.log(isLoading);
+
     return (
-        <div className='contentDetail'>
+        
+            isLoading ? <Loading /> :
+            <div className='contentDetail'>
             <div className='contentDetail-container'>
-                <TextCustom content="Trailer" color={randomNum}/>
-                <div className='video-container'>
-                    {
-                        videos.map((item) => (
-                            <VideoRender srcVideo={item.key} nameTrailer={item.name}/>
-                        ))
-                    }
-                </div>
+                {
+                    isChange ? 
+                    <MovieFilm idMovie={idMovie}/> :
+                    <>
+                        <TextCustom content="Trailer" color={randomNum}/>
+                        <div className='video-container'>
+                            {
+                                videos.map((item) => (
+                                    <VideoRender srcVideo={item.key} nameTrailer={item.name}/>
+                                ))
+                            }
+                        </div>
+                    </>
+                }
 
 
                 <TextCustom content="Reviews" color={randomNum}/>
@@ -87,7 +112,8 @@ function ContentDetail(props) {
             <div className='listSimiler'>
                 <ShowList listId={idMovie} nameList="Similar" type="1"/>
             </div>
-        </div>
+        </div> 
+        
     );
 }
 

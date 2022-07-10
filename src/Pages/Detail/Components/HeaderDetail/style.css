@@ -112,6 +112,15 @@
     overflow-x : hidden;
 }
 
+.button-handleWF{
+    display: flex;
+    justify-content: center;
+}
+
+.button-handleWF button{
+    flex: 50% 0;
+}
+
 @media screen and (min-width : 860px) and (max-width : 1200px){
     .headerDetail-container{
         max-width: 860px;

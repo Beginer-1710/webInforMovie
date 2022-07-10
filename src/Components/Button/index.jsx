@@ -6,9 +6,9 @@ Button.propTypes = {
 };
 
 function Button(props) {
-    const {content} = props;
+    const {content, indexColor = 0} = props;
     return (
-        <div className='button-custom'>
+        <div className={`button-custom color${indexColor}`}>
             <span>{content}</span>
         </div>
     );

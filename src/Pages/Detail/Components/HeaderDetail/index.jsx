@@ -13,7 +13,7 @@ HeaderDetail.propTypes = {
 };
 
 function HeaderDetail(props) {
-    const {data = {}, credits = []} = props;
+    const {data = {}, credits = [], onChangeView , isChange} = props;
     const { enqueueSnackbar } = useSnackbar();
     const dispatch = useDispatch();
     const StateRedux = useSelector(state => state.user)
@@ -85,6 +85,12 @@ function HeaderDetail(props) {
             },
           ]
       };
+
+      const handleChangeView = () => {
+        if(onChangeView)
+        onChangeView(!isChange)
+      }
+
     return (
         <div className='headerDetail'>
             <div className='img-bebind' style={{backgroundImage : `url(https://image.tmdb.org/t/p/original/${data?.backdrop_path})`}}>
@@ -122,8 +128,13 @@ function HeaderDetail(props) {
                         </Slider>
                     </div>
 
-                    <div className='follow-button' onClick={handleClickFollow}>
-                        <Button content="Follow"/>
+                    <div className='button-handleWF'>
+                        <div className='' onClick={handleClickFollow}>
+                            <Button content="Follow" indexColor={2}/>
+                        </div>
+                        <div className='' onClick={handleChangeView}>
+                            <Button content={isChange ? "Watch Trailer" : "Watch now"} />
+                        </div>
                     </div>
                 </div>
             </div>
