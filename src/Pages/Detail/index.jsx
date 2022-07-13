@@ -41,7 +41,7 @@ function Detail(props) {
     },[idMovie])
 
     const [changeView,setChangeView] = useState(false);
-    useMemo(() => {
+    useEffect(() => {
         setChangeView(false);
     },[idMovie])
     const hanleChangeView = (value) => {

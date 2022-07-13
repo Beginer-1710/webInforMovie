@@ -17,12 +17,12 @@ ContentDetail.propTypes = {
 function ContentDetail(props) {
     const {videos, idMovie , reviews , isChange} = props;
     let tempArrayReview = {};
-    useMemo(() => {
+    tempArrayReview = useMemo(() => {
         if(reviews.length > 10){
-            tempArrayReview = reviews?.slice(0,10)
+            return reviews?.slice(0,10)
         }
         else{
-            tempArrayReview = reviews?.slice(0,reviews.length)
+            return reviews?.slice(0,reviews.length)
         }
     })
 
@@ -39,17 +39,17 @@ function ContentDetail(props) {
 
     const [isLoading , setIsLoading] = useState(true);
 
-    useMemo(() => {
+    useEffect(() => {
         setIsLoading(true)
     },[isChange])
 
     useEffect(() =>{
       setTimeout(() =>{
           setIsLoading(false);
-      },1000)
+      },500)
   },[isChange])
 
-  console.log(isLoading);
+
 
     return (
         
