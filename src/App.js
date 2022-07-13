@@ -25,7 +25,7 @@ function App() {
           <Route path='/webInforMovie/detail/:idMovie' element={<Detail />} />
           <Route path='/webInforMovie/follow' element={<Follows />} />
 
-          <Route element={<NoPage />} />
+          <Route path="*" element={<NoPage />} />
         </Routes>
       <Footer />
     </>
