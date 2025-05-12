@@ -1,0 +1,19 @@
+.loginForm .MuiAvatar-root{
+    background-color: #1565c0 !important;
+}
+
+
+.loginForm .MuiTypography-root{
+    text-align: center;
+}
+
+.loginForm{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.loginForm .MuiFormControl-root{
+    width: 290px !important;
+}
+

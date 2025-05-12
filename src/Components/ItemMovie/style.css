@@ -1,0 +1,149 @@
+
+.item{
+    position: relative;
+    margin: 0px 10px;
+}
+
+.item .deleteIcon{
+    position: absolute;
+    top: -20px;
+    right: -20px;
+    z-index: 2;
+    background-color: black;
+    border-radius: 50%;
+    cursor: pointer;
+    padding: 5px 5px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transition: 0.5s ease all;
+}
+
+.deleteIcon-item{
+    width: 15px !important;
+    height: 15px !important;
+}
+
+.item .deleteIcon:hover{
+    background-color: red;
+    box-shadow: 0 0 10px red,
+    0 0 30px red,
+    0 0 60px red,
+    0 0 100px red
+}
+
+.item-container{
+    position: relative;
+    z-index: 1;
+    display: flex;
+    flex-direction: column;
+    cursor: pointer;
+    align-items: center;
+}
+
+.Item-img_container{
+    display: flex;
+    justify-content: center;
+    width: 100%;
+    height: 350px;
+    border-radius: 20px;
+}
+
+.item-container img{
+    object-fit: cover;
+    border-radius: 20px;
+    width: 100%;
+    height: 100%;
+    display: inline-block;
+}
+
+
+
+.item-container:hover::after{
+    opacity: 0.8;
+}
+
+.item-container span{
+    margin-top: 10px;
+    font-size: 20px;
+    font-weight: 700;
+    padding: 0px 10px;
+    transition: 0.25s all ease;
+}
+
+.item-container:hover span{
+    color: red;
+}
+
+.Item-img_container{
+    position: relative;
+}
+
+.Item-img_hover{
+    position: absolute;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    right: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 10;
+}
+
+
+.icon-container{
+    position: relative;
+    padding: 15px 35px;
+    background-color: red;
+    border-radius: 50px;
+    overflow: hidden;
+    box-shadow: 0px 0px 4px 10px #ff00004d;
+    transform: scale(0);
+    transition: 0.25s all ease;
+}
+
+.youtube_icon{
+    width: 20px !important;
+    height: 20px !important;
+}
+
+.item-container:hover .icon-container{
+    transform: scale(1);
+}
+
+.item-container::after{
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 101%;
+    height: 350px;
+    border-radius: 20px;
+    background-color: black;
+    opacity: 0;
+    transition: 0.25s all ease;
+}
+
+
+@media screen and (max-width : 700px){
+    .iten-name{
+        display: none;
+    }
+    /* .Item-img_container,
+    .item-container::after,
+    .Item-img_container{
+        height: 400px;
+    } */
+}   
+
+/* @media screen and (max-width : 500px){
+    .Item-img_container,
+    .item-container::after,
+    .Item-img_container{
+        height: 300px;
+    }
+} */
+
+

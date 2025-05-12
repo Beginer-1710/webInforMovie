@@ -1,0 +1,218 @@
+
+.header{
+    display: flex;
+    justify-content: center;
+    background-color: #0f0f0f;
+    top: 0;
+    position: fixed;
+    right: 0;
+    left: 0;
+    height: 80px;
+    transition: all 0.25s ease;
+    z-index: 100;
+}
+
+.header.top{
+    background-color: transparent;
+    height: 128px;
+}
+
+.header-container{
+    height: 100%;
+    max-width: 1200px;
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    position: relative;
+}
+
+.header-logo img{
+    height: 50px;
+    cursor: pointer;
+}
+
+.header-nav{
+    list-style: none;
+    font-size: 25px;
+    font-weight: 700;
+    display: flex;
+}
+
+.header-nav .header-nav_item{
+    margin-right: 30px;
+    position: relative;
+    cursor: pointer;
+    transition: 0.25s color ease;
+}
+
+
+.header-nav_item:hover{
+    color: red;
+}
+
+.header-nav_item::after{
+    content: "";
+    position: absolute;
+    top: 120%;
+    left: 50%;
+    transform: translateX(-50%);
+    height: 2px;
+    width: 0;
+    background-color: red;
+    transition: 0.25s all ease;
+    
+}
+
+.header-nav_item:hover::after{
+    width: 100%;
+}
+
+.header-nav_item.active::after{
+    width: 100%;
+}
+
+.menuListGenre{
+    position: absolute;
+    top: 100%;
+    left: 0;
+    width: 100%;
+    z-index: 100;
+}
+
+.menuListGenre.active .menuList{
+    display: block;
+}
+
+.Menu-respon{
+    display: none;
+    position: relative;
+}
+
+.title-formLogin span{
+    color: #1976d2;
+    cursor: pointer;
+}
+
+.useIcon{
+    padding-top: 5px;
+    position: relative;
+}
+
+li{
+    list-style: none;
+}
+
+.css-i4bv87-MuiSvgIcon-root{
+    width: 30px !important;
+    height: 30px !important;
+}
+
+.small_menu{
+    position: absolute;
+    list-style: none;
+    left: 50%;
+    top: 140%;
+    width: 150px;
+    height: 0px;
+    transform: translateX(-50%);
+    background-color:   black;
+    transition: 0.25s ease all;
+    overflow: hidden;
+    border-radius: 5px;
+}
+
+.small_menu.active{
+    height: 40px;
+}
+
+.small_menu li{
+    font-size: 15px;
+    padding: 10px 10px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transition: 0.25 all ease;
+    background-color: #0f0f0f;
+}
+
+.small_menu li:hover{
+    color: white;
+    background-color: red;
+}
+
+.header-responItem{
+    margin: 0px 20px;
+}
+
+
+.Menu-respon_smallMenu{
+    position: absolute;
+    top : 140%;
+    right: 0;
+    background-color: #0f0f0f;
+    height: 0px;
+    transition: 0.25s all ease;
+    overflow: hidden;
+    border-radius: 5px;
+}
+
+.Menu-respon_smallMenu.active{
+    height: 83px;
+}
+
+.header-responItem_menuItem{
+    padding: 10px 60px;
+    transition: 0.25s all ease;
+}
+
+.header-responItem_menuItem:hover{
+    background-color: red;
+}
+
+
+
+.CloseButtonMenuRespon{
+    position: absolute;
+    top: -20px;
+    right: 0;
+    cursor: pointer;
+    display: none;
+}
+.CloseButtonMenuRespon-item{
+    width: 30px !important;
+    height: 30px !important;
+}
+
+.menuListGenre.active .CloseButtonMenuRespon{
+    display: block;
+}
+
+
+
+@media screen and (min-width : 860px) and (max-width : 1200px){
+    .header-container{
+        max-width: 860px;
+    }
+}
+
+@media screen and (max-width : 859px) {
+    .header-nav{
+        display: none;
+    }
+    .header-container{
+        justify-content: space-between;
+    }
+    .Menu-respon{
+        display: flex;
+        align-items: center;
+        cursor: pointer;
+        margin-right: 40px;
+    }
+    .header-logo{
+        margin-left: 40px;
+    }
+    .header-logo img{
+        height: 30px;
+    }
+}

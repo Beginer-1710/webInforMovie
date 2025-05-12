@@ -1,0 +1,11 @@
+.NoPage{
+    height: 500px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+
+.NoPage h1{
+    font-weight: 800;
+}
