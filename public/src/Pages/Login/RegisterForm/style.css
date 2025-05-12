@@ -1,0 +1,19 @@
+.registerForm .MuiAvatar-root{
+    background-color: #1565c0 !important;
+}
+
+
+.registerForm .MuiTypography-root{
+    text-align: center;
+}
+
+.registerForm{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.css-1vhaqj4-MuiButtonBase-root-MuiButton-root{
+    margin-top: 0 !important;
+}
+

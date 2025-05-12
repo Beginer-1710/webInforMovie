@@ -1,0 +1,99 @@
+.button-custom{
+    position: relative;
+    padding: 20px 60px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: rgba(0,0,0,0.5);
+    margin: 40px;
+    transition: 1s;
+    overflow: hidden;
+    cursor: pointer;
+}
+
+.button-custom:hover{
+    background-color: red;
+    box-shadow: 0 0 10px red,
+    0 0 30px red,
+    0 0 60px red,
+    0 0 100px red
+
+}
+
+.button-custom:hover::before{
+    width: 120%;
+}
+.button-custom::before{
+    content: "";
+    position: absolute;
+    width: 40px;
+    height: 1000px;
+    background-color: red;
+    transition: 1s;
+    animation: roll 3s linear infinite;
+}
+
+@keyframes roll {
+    0%{
+        transform: rotate(0deg);
+    }
+    100%{
+        transform: rotate(360deg);
+    }
+}
+
+
+
+.button-custom::after{
+    content: "";
+    position: absolute;
+    top: 4px;
+    bottom: 4px;
+    left: 4px;
+    right: 4px;
+    background-color: #0f0f0f;
+    transition: 0.5s;
+}
+
+.button-custom:hover::after{
+    background-color: red;
+}
+
+.button-custom span{
+    position: relative;
+    z-index: 1;
+    font-size: 16px;
+    color: white;
+    opacity: 0.5;
+    text-transform: uppercase;
+    letter-spacing: 4px;
+    transition: 0.5s;
+}
+
+.button-custom:hover span{
+    opacity: 1;
+}
+
+/* --------------------------------------- */
+.color2.button-custom:hover{
+    background-color: blue;
+    box-shadow: 0 0 10px blue,
+    0 0 30px blue,
+    0 0 60px blue,
+    0 0 100px blue
+
+}
+
+.color2.button-custom::before{
+    content: "";
+    position: absolute;
+    width: 40px;
+    height: 1000px;
+    background-color: blue;
+    transition: 1s;
+    animation: roll 3s linear infinite;
+}
+
+.color2.button-custom:hover::after{
+    background-color: blue;
+}
